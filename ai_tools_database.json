@@ -1,0 +1,592 @@
+{
+  "ai_tools": [
+    {
+      "name": "OpenAI API",
+      "description": "Provides access to GPT-3 and GPT-4 models for a wide variety of natural language tasks and Codex for translating natural language to code.",
+      "categories": ["Language Models", "API", "Coding"],
+      "pricing": {
+        "type": "Subscription",
+        "details": "Pay-per-use API pricing (see website for details)"
+      },
+      "features": [
+        "Natural language processing",
+        "Code generation",
+        "Wide range of applications"
+      ],
+      "link": "https://openai.com/api/",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    },
+    {
+      "name": "Gopher",
+      "description": "A 280 billion parameter language model developed by DeepMind.",
+      "categories": ["Language Models", "Research"],
+      "pricing": {
+        "type": "N/A",
+        "details": "Research model, not publicly available"
+      },
+      "features": [
+        "Large-scale language processing",
+        "Research-focused"
+      ],
+      "link": "https://www.deepmind.com/blog/language-modelling-at-scale-gopher-ethical-considerations-and-retrieval",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    },
+    {
+      "name": "OPT",
+      "description": "Open Pretrained Transformers by Facebook, a suite of decoder-only pre-trained transformers.",
+      "categories": ["Language Models", "Open Source"],
+      "pricing": {
+        "type": "Free",
+        "details": "Open-source model"
+      },
+      "features": [
+        "Decoder-only architecture",
+        "Text generation",
+        "Open source"
+      ],
+      "link": "https://huggingface.co/facebook/opt-350m",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    },
+    {
+      "name": "BLOOM",
+      "description": "A model similar to GPT-3, trained on 46 different languages and 13 programming languages by Hugging Face.",
+      "categories": ["Language Models", "Multilingual", "Open Source"],
+      "pricing": {
+        "type": "Free",
+        "details": "Open-source model"
+      },
+      "features": [
+        "Multilingual support",
+        "Programming language support",
+        "Open source"
+      ],
+      "link": "https://huggingface.co/docs/transformers/model_doc/bloom",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    },
+    {
+      "name": "Llama",
+      "description": "Meta's open-source large language model.",
+      "categories": ["Language Models", "Open Source"],
+      "pricing": {
+        "type": "Free",
+        "details": "Open-source model"
+      },
+      "features": [
+        "Large-scale language processing",
+        "Open source"
+      ],
+      "link": "https://www.llama.com/",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    },
+    {
+      "name": "Claude",
+      "description": "An AI assistant from Anthropic for conversational tasks.",
+      "categories": ["Chatbots", "AI Assistant"],
+      "pricing": {
+        "type": "Subscription",
+        "details": "See website for pricing details"
+      },
+      "features": [
+        "Conversational AI",
+        "Safe and helpful responses"
+      ],
+      "link": "https://claude.ai/",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    },
+    {
+      "name": "Vicuna-13B",
+      "description": "An open-source chatbot trained by fine-tuning LLaMA on user-shared conversations from ShareGPT.",
+      "categories": ["Chatbots", "Open Source"],
+      "pricing": {
+        "type": "Free",
+        "details": "Open-source model"
+      },
+      "features": [
+        "Conversational AI",
+        "Fine-tuned on user conversations",
+        "Open source"
+      ],
+      "link": "https://lmsys.org/blog/2023-03-30-vicuna/",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": "2023-03-30"
+    },
+    {
+      "name": "Mistral",
+      "description": "Cutting-edge open-weight large language models by Mistral AI.",
+      "categories": ["Language Models", "Open Source"],
+      "pricing": {
+        "type": "Free",
+        "details": "Open-source model"
+      },
+      "features": [
+        "High-performance language processing",
+        "Open source"
+      ],
+      "link": "https://mistral.ai/en/models",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    },
+    {
+      "name": "Grok",
+      "description": "An LLM by xAI with open-source code and weights, designed to provide helpful and truthful answers.",
+      "categories": ["Language Models", "Open Source", "AI Assistant"],
+      "pricing": {
+        "type": "Free",
+        "details": "Open-source model; free access on grok.com with usage quotas"
+      },
+      "features": [
+        "Conversational AI",
+        "Open source",
+        "Designed for truthfulness"
+      ],
+      "link": "https://grok.x.ai/",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    },
+    {
+      "name": "Qwen",
+      "description": "A series of LLMs independently developed by Alibaba Cloud, with chatbot capabilities including image generation and document processing.",
+      "categories": ["Language Models", "Chatbots", "Open Source"],
+      "pricing": {
+        "type": "Free",
+        "details": "Open-source model"
+      },
+      "features": [
+        "Multimodal capabilities",
+        "Image generation",
+        "Document processing",
+        "Open source"
+      ],
+      "link": "https://qwenlm.github.io/",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    },
+    {
+      "name": "ChatGPT",
+      "description": "A large language model by OpenAI that interacts in a conversational way.",
+      "categories": ["Chatbots", "AI Assistant"],
+      "pricing": {
+        "type": "Freemium",
+        "details": "Free tier available, premium plans available"
+      },
+      "features": [
+        "Conversational AI",
+        "Text generation",
+        "Wide application support"
+      ],
+      "link": "https://chatgpt.com/",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    },
+    {
+      "name": "Copilot",
+      "description": "An everyday AI companion by Microsoft.",
+      "categories": ["Chatbots", "AI Assistant"],
+      "pricing": {
+        "type": "Subscription",
+        "details": "See website for pricing details"
+      },
+      "features": [
+        "Conversational AI",
+        "Productivity assistance"
+      ],
+      "link": "https://copilot.microsoft.com/",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    },
+    {
+      "name": "Gemini",
+      "description": "A family of multimodal large language models developed by Google Deepmind.",
+      "categories": ["Language Models", "Chatbots", "Multimodal"],
+      "pricing": {
+        "type": "Freemium",
+        "details": "Free access with premium options"
+      },
+      "features": [
+        "Multimodal processing",
+        "Conversational AI"
+      ],
+      "link": "https://gemini.google.com/",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    },
+    {
+      "name": "Meta AI",
+      "description": "Meta AI assistant for tasks, AI-generated images, and answering questions, built on Llama LLM.",
+      "categories": ["Chatbots", "AI Assistant", "Image Generation"],
+      "pricing": {
+        "type": "Free",
+        "details": "Free to use"
+      },
+      "features": [
+        "Conversational AI",
+        "Image generation",
+        "Task assistance"
+      ],
+      "link": "https://www.meta.ai/",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    },
+    {
+      "name": "DeepSeek",
+      "description": "Cutting-edge LLMs for enterprise, consumer, and scientific applications.",
+      "categories": ["Language Models", "Open Source"],
+      "pricing": {
+        "type": "Free",
+        "details": "Open-source model"
+      },
+      "features": [
+        "Enterprise-grade LLMs",
+        "Scientific applications",
+        "Open source"
+      ],
+      "link": "https://www.deepseek.com/",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    },
+    {
+      "name": "Character.AI",
+      "description": "Create and chat with custom AI characters.",
+      "categories": ["Chatbots", "AI Assistant"],
+      "pricing": {
+        "type": "Freemium",
+        "details": "Free tier with premium options"
+      },
+      "features": [
+        "Custom character creation",
+        "Conversational AI"
+      ],
+      "link": "https://character.ai/",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    },
+    {
+      "name": "Pi",
+      "description": "A personalized AI platform available as a digital assistant.",
+      "categories": ["Chatbots", "AI Assistant"],
+      "pricing": {
+        "type": "Free",
+        "details": "Free to use"
+      },
+      "features": [
+        "Personalized assistance",
+        "Conversational AI"
+      ],
+      "link": "https://pi.ai/",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    },
+    {
+      "name": "Le Chat",
+      "description": "Chat with Mistral AI's cutting-edge language models.",
+      "categories": ["Chatbots", "AI Assistant"],
+      "pricing": {
+        "type": "Freemium",
+        "details": "Free tier with premium options"
+      },
+      "features": [
+        "Conversational AI",
+        "High-performance models"
+      ],
+      "link": "https://chat.mistral.ai/",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    },
+    {
+      "name": "LibreChat",
+      "description": "A free and open-source chat interface for assistant AIs.",
+      "categories": ["Custom Interfaces", "Open Source"],
+      "pricing": {
+        "type": "Free",
+        "details": "Open-source project"
+      },
+      "features": [
+        "Customizable chat interface",
+        "Supports multiple AI assistants",
+        "Open source"
+      ],
+      "link": "https://librechat.ai/",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    },
+    {
+      "name": "Chatbot UI",
+      "description": "An open-source ChatGPT UI.",
+      "categories": ["Custom Interfaces", "Open Source"],
+      "pricing": {
+        "type": "Free",
+        "details": "Open-source project"
+      },
+      "features": [
+        "ChatGPT-like interface",
+        "Customizable UI",
+        "Open source"
+      ],
+      "link": "https://www.chatbotui.com/",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    },
+    {
+      "name": "Perplexity AI",
+      "description": "AI-powered search tools.",
+      "categories": ["Search Engines", "AI Assistant"],
+      "pricing": {
+        "type": "Freemium",
+        "details": "Free tier with premium options"
+      },
+      "features": [
+        "AI-driven search",
+        "Answer generation"
+      ],
+      "link": "https://www.perplexity.ai/",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    },
+    {
+      "name": "Metaphor",
+      "description": "Language model-powered search.",
+      "categories": ["Search Engines"],
+      "pricing": {
+        "type": "N/A",
+        "details": "See website for details"
+      },
+      "features": [
+        "AI-driven search",
+        "Natural language queries"
+      ],
+      "link": "https://metaphor.systems/",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    },
+    {
+      "name": "Phind",
+      "description": "AI-based search engine.",
+      "categories": ["Search Engines"],
+      "pricing": {
+        "type": "Free",
+        "details": "Free to use"
+      },
+      "features": [
+        "AI-driven search",
+        "Developer-focused"
+      ],
+      "link": "https://phind.com/",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    },
+    {
+      "name": "You.com",
+      "description": "A search engine built on AI that provides a customized, private search experience.",
+      "categories": ["Search Engines"],
+      "pricing": {
+        "type": "Free",
+        "details": "Free to use with privacy focus"
+      },
+      "features": [
+        "Private search",
+        "AI-driven results",
+        "Customized experience"
+      ],
+      "link": "https://you.com/",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    },
+    {
+      "name": "Komo",
+      "description": "An AI-powered search engine.",
+      "categories": ["Search Engines"],
+      "pricing": {
+        "type": "Free",
+        "details": "Free to use"
+      },
+      "features": [
+        "AI-driven search",
+        "Fast query processing"
+      ],
+      "link": "https://komo.ai/",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    },
+    {
+      "name": "privateGPT",
+      "description": "Ask questions to your documents without an internet connection using LLMs.",
+      "categories": ["Local Search Engines", "Open Source"],
+      "pricing": {
+        "type": "Free",
+        "details": "Open-source project"
+      },
+      "features": [
+        "Offline document querying",
+        "LLM-powered",
+        "Open source"
+      ],
+      "link": "https://github.com/imartinez/privateGPT",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    },
+    {
+      "name": "quivr",
+      "description": "A generative AI second brain for chatting with your files using LLMs and embeddings.",
+      "categories": ["Local Search Engines", "Open Source"],
+      "pricing": {
+        "type": "Free",
+        "details": "Open-source project"
+      },
+      "features": [
+        "File-based querying",
+        "LLM-powered",
+        "Open source"
+      ],
+      "link": "https://github.com/StanGirard/quivr",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    },
+    {
+      "name": "Jasper",
+      "description": "Create content faster with artificial intelligence.",
+      "categories": ["Writing Assistants"],
+      "pricing": {
+        "type": "Subscription",
+        "details": "See website for pricing details"
+      },
+      "features": [
+        "Content generation",
+        "Marketing copy",
+        "Blog writing"
+      ],
+      "link": "https://www.jasper.ai/",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    },
+    {
+      "name": "Compose AI",
+      "description": "A free Chrome extension that cuts writing time by 40% with AI-powered autocompletion.",
+      "categories": ["Writing Assistants"],
+      "pricing": {
+        "type": "Free",
+        "details": "Free Chrome extension"
+      },
+      "features": [
+        "AI-powered autocompletion",
+        "Chrome integration",
+        "Time-saving"
+      ],
+      "link": "https://www.compose.ai/",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    },
+    {
+      "name": "Rytr",
+      "description": "An AI writing assistant that helps create high-quality content.",
+      "categories": ["Writing Assistants"],
+      "pricing": {
+        "type": "Freemium",
+        "details": "Free tier with premium options"
+      },
+      "features": [
+        "Content generation",
+        "Multiple writing styles",
+        "User-friendly interface"
+      ],
+      "link": "https://rytr.me/",
+      "user_ratings": {
+        "average_rating": null,
+        "reviews": []
+      },
+      "launch_date": null
+    }
+    ]
+}
