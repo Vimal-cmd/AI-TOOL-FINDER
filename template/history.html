@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your History - AI Tools Finder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .main {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        a.tool-link {
+            text-decoration: none;
+            color: #4a54e1;
+            font-weight: bold;
+        }
+
+        .timestamp {
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.6rem 1rem;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .back-btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <h1>AI Tools Finder</h1>
+    </div>
+</header>
+
+<div class="main">
+    <h2>Recently Viewed Tools</h2>
+
+    {% if tools %}
+    <ul>
+        {% for tool in tools %}
+            <li>
+                <a href="/tool/{{ tool.name | urlencode }}" class="tool-link">{{ tool.name }}</a><br>
+                <span class="timestamp">Recently Viewed</span>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>You haven't viewed any tools yet.</p>
+{% endif %}
+
+
+    <a class="back-btn" href="/dashboard">⬅ Back to Dashboard</a>
+</div>
+</body>
+</html>
