@@ -3,9 +3,11 @@ import json
 import os
 import sqlite3
 from werkzeug.security import generate_password_hash, check_password_hash
+import os
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key_here'  # use env variable in production
+app.secret_key = os.environ.get("SECRET_KEY", "fallback_dev_key")
+
 
 # Load tools
 with open(os.path.join('data', 'ai_tools_database.json'), 'r') as f:
