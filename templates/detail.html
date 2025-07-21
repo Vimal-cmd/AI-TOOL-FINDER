@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ tool.name }} - AI Tools Finder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .main-content {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .section {
+            margin-top: 1.5rem;
+        }
+
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .badge {
+            background: #e1e5f0;
+            color: #444;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.7rem 1.2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .back-btn:hover {
+            opacity: 0.9;
+        }
+
+        a.visit-link {
+            display: inline-block;
+            margin-top: 1rem;
+            text-decoration: none;
+            color: white;
+            background: #28a745;
+            padding: 0.6rem 1rem;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        a.visit-link:hover {
+            background: #218838;
+        }
+
+        .section-title {
+            font-weight: 600;
+            color: #444;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Review Styling */
+        .review-box, .review-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px 0;
+            background: #f8f8f8;
+        }
+
+        .review-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+        }
+
+        .like-dislike {
+            cursor: pointer;
+            color: #007bff;
+            font-size: 14px;
+        }
+
+        .like-dislike:hover {
+            text-decoration: underline;
+        }
+
+        .review-header {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .review-meta {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <h1>AI Tools Finder</h1>
+    </div>
+</header>
+
+<div class="main-content">
+    <h2>{{ tool.name }}</h2>
+    <p><strong>{{ tool.description }}</strong></p>
+
+    <div class="section">
+        <div class="section-title">Categories:</div>
+        <div class="badges">
+            {% for cat in tool.categories %}
+                <div class="badge">{{ cat }}</div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Features:</div>
+        <div class="badges">
+            {% for feat in tool.features %}
+                <div class="badge">{{ feat }}</div>
+            {% endfor %}
+        </div>
+    </div>
+
+    {% if tool.pricing %}
+    <div class="section">
+        <div class="section-title">Pricing:</div>
+        <p><strong>{{ tool.pricing.type }}:</strong> {{ tool.pricing.details }}</p>
+    </div>
+    {% endif %}
+
+    <a href="{{ tool.link }}" class="visit-link" target="_blank">🔗 Visit Tool</a>
+    <br>
+    <a class="back-btn" href="/dashboard">⬅ Back to Dashboard</a>
+
+    <!-- Review Submission -->
+    <div class="section">
+        <h3>Write a Review</h3>
+        <div class="review-box">
+            <form method="POST" action="/tool/{{ tool.name }}/review">
+                <textarea name="review" rows="3" style="width:100%;" placeholder="Your review here..." required></textarea>
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Reviews Display -->
+    <div class="section">
+        <h3>User Reviews</h3>
+        {% for review in reviews %}
+            <div class="review-item" id="review-{{ review[0] }}">
+                <div class="review-header">{{ review[1] }}</div>
+                <div class="review-meta">{{ review[4] }}</div>
+                <div class="review-content">{{ review[3] }}</div>
+
+                <div class="review-actions">
+                    <span class="like-dislike" onclick="vote('like', {{ review[0] }})">👍 {{ review[5] }}</span>
+                    <span class="like-dislike" onclick="vote('dislike', {{ review[0] }})">👎 {{ review[6] }}</span>
+
+                    {% if review[2] == user.id %}
+                        <span class="like-dislike" style="color: red;" onclick="deleteReview({{ review[0] }})">🗑️ Delete</span>
+
+                    {% endif %}
+                </div>
+            </div>
+        {% else %}
+            <p>No reviews yet. Be the first to share your thoughts!</p>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    function vote(action, reviewId) {
+        fetch(`/review/${reviewId}/${action}`, {
+            method: 'POST'
+        }).then(res => {
+            if (res.ok) {
+                location.reload();
+            }
+        });
+    }
+    
+function deleteReview(reviewId) {
+    if (confirm("Are you sure you want to delete this review?")) {
+        fetch(`/review/${reviewId}/delete`, {
+            method: 'POST'
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                const reviewElem = document.getElementById(`review-${reviewId}`);
+                if (reviewElem) reviewElem.remove();
+            }
+        });
+    }
+}
+</script>
+
+
+</body>
+</html>

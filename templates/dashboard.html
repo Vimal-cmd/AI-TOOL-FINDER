@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools Finder - DashboaDashboardrd</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .dashboard-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .dashboard-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logout-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .logout-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .main-content {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .search-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .search-container {
+            position: relative;
+            max-width: 600px;
+            margin: 1rem auto;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            transition: border-color 0.3s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .tool-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .tool-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .tool-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .tool-info h3 {
+            color: #333;
+            margin-bottom: 0.25rem;
+        }
+
+        .tool-category {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .tool-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .tool-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: #f0f2f5;
+            color: #555;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .no-results {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 1rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .header-left {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .main-content {
+                padding: 1rem;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+           
+            <div class="logo">
+                <h1>AI Tools Finder</h1>
+            </div>
+        </div>
+        <div class="user-info">
+    <span id="userEmail">{{ user.email }}</span>
+
+    <!-- ✨ NEW BUTTON: History link -->
+    <button class="dashboard-btn" onclick="window.location.href='/history'">History</button>
+
+    <button class="logout-btn" onclick="window.location.href='/logout'">Logout</button>
+</div>
+
+
+    </header>
+
+    <main class="main-content">
+        <section class="search-section">
+            <h2>Find the Perfect AI Tool</h2>
+            <p>Search through our comprehensive database of AI tools</p>
+            <div class="search-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" class="search-input" id="searchInput" placeholder="Search for AI tools, categories, or features...">
+            </div>
+        </section>
+
+        <section class="tools-section">
+            <div class="tools-grid" id="toolsGrid">
+                <!-- Tools will be populated by JavaScript -->
+            </div>
+            <div class="no-results" id="noResults" style="display: none;">
+                No tools found matching your search criteria.
+            </div>
+        </section>
+    </main>
+
+    <script>
+    // Display user email
+    const userEmail = localStorage.getItem('userEmail');
+    if (userEmail) {
+        document.getElementById('userEmail').textContent = userEmail;
+    }
+
+    let allTools = [];
+
+    // Render tools to the DOM
+    function renderTools(tools) {
+        const toolsGrid = document.getElementById('toolsGrid');
+        const noResults = document.getElementById('noResults');
+        
+        if (tools.length === 0) {
+            toolsGrid.innerHTML = '';
+            noResults.style.display = 'block';
+            return;
+        }
+
+        noResults.style.display = 'none';
+        toolsGrid.innerHTML = tools.map(tool => `
+            <div class="tool-card" onclick="viewTool('${tool.name}')">
+                <div class="tool-header">
+                    <div class="tool-icon">${tool.icon || '🧠'}</div>
+                    <div class="tool-info">
+                        <h3>${tool.name}</h3>
+                        <div class="tool-category">${tool.categories?.join(', ') || 'Uncategorized'}</div>
+                    </div>
+                </div>
+                <div class="tool-description">${tool.description || 'No description available.'}</div>
+                <div class="tool-tags">
+                    ${(tool.features || []).map(tag => `<span class="tag">${tag}</span>`).join('')}
+                </div>
+            </div>
+        `).join('');
+    }
+
+    // Fetch all tools once
+    async function fetchInitialTools() {
+        const res = await fetch('/search?q=');
+        allTools = await res.json();
+        renderTools(allTools);
+    }
+
+    // Filter tools client-side for better UX
+    function searchTools(query) {
+        const filtered = allTools.filter(tool =>
+            tool.name.toLowerCase().includes(query) ||
+            (tool.description && tool.description.toLowerCase().includes(query)) ||
+            (tool.categories && tool.categories.some(cat => cat.toLowerCase().includes(query))) ||
+            (tool.features && tool.features.some(feat => feat.toLowerCase().includes(query)))
+        );
+        renderTools(filtered);
+    }
+
+    // View tool detail
+    function viewTool(toolName) {
+        const encodedName = encodeURIComponent(toolName);
+        window.location.href = `/tool/${encodedName}`;
+    }
+
+    function showDashboard() {
+        alert('Dashboard functionality would show analytics, saved tools, and user preferences.');
+    }
+
+    function logout() {
+        localStorage.removeItem('userLoggedIn');
+        localStorage.removeItem('userEmail');
+        window.location.href = 'index.html';
+    }
+
+    // Event listener for search
+    document.getElementById('searchInput').addEventListener('input', function(e) {
+        const query = e.target.value.toLowerCase();
+        searchTools(query);
+    });
+
+    // Initial load
+    fetchInitialTools();
+</script>
+</body>
+</html>
